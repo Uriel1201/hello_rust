@@ -21,7 +21,7 @@ use rand::RngExt;
 use std::process::ExitCode;
 
 fn main() -> ExitCode {
-    let args: Vec<String> = std::env::args().collect();
+    let args: Vec<String> = std::env::args().collect().skip(1);
     let n: usize = match args[0].parse() {
         Ok(n) => n,
         Err(_) => {
