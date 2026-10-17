@@ -1,3 +1,4 @@
+use std::process::ExitCode;
 use rand::Rng;
 
 fn main() {
@@ -6,14 +7,30 @@ fn main() {
         Ok(n) => n,
         Err(_) => {
             eprintln!("Error: was expected an Integer");
-            return;
+            return ExitCode::FAILURE;
         }
     };
     let trials: usize = match args[1].parse() {
         Ok(trials) => trials,
         Err(_) => {
             eprintln!("Error: was expected an Integer");
-            return;
+            return ExitCode::FAILURE;
         }
-    };    
+    }; 
+    let mut s = vec![0u64, n + 2];
+    let mut rng = rand::thread_rng();
+    for _ in 0..trials {
+        let mut birthday = vec![false, n];
+        let mut count = 0;
+        for _ in 0..n + 1 {
+            let p = rng.get_range(0..n);
+            count += 1;
+            if birthday[p] {
+                break;
+            }
+            b[p] = true;
+        }
+        s[count] += 1;
+    }
+    ExitCode::SUCCESS
 }
