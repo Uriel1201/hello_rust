@@ -1,7 +1,7 @@
+use rand::RngExt;
 use std::process::ExitCode;
-use rand::Rng;
 
-fn main() {
+fn main() -> ExitCode {
     let args: Vec<String> = std::env::args().collect();
     let n: usize = match args[0].parse() {
         Ok(n) => n,
@@ -16,11 +16,11 @@ fn main() {
             eprintln!("Error: was expected an Integer");
             return ExitCode::FAILURE;
         }
-    }; 
-    let mut s = vec![0u64, n + 2];
+    };
+    let mut s = vec![0u64; n + 2];
     let mut rng = rand::rng();
     for _ in 0..trials {
-        let mut birthday = vec![false, n];
+        let mut birthday = vec![false; n];
         let mut count = 0;
         for _ in 0..n + 1 {
             let p = rng.random_range(0..n);
