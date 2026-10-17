@@ -32,6 +32,7 @@ fn main() -> ExitCode {
         }
         s[count] += 1;
     }
+    let mut f = 0.0;
     for (k, count) in s.into_iter().enumerate() {
         f += count as f64 / trials as f64;
         if f >= 0.5 {
