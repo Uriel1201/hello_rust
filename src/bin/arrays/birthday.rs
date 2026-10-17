@@ -5,9 +5,15 @@ fn main() {
     let n: usize = match args[0].parse() {
         Ok(n) => n,
         Err(_) => {
-            eprintln!("Error: se esperaba un entero");
+            eprintln!("Error: was expected an Integer");
             return;
         }
     };
-    //let trials: usize =
+    let trials: usize = match args[1].parse() {
+        Ok(trials) => trials,
+        Err(_) => {
+            eprintln!("Error: was expected an Integer");
+            return;
+        }
+    };    
 }
