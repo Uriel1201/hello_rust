@@ -18,17 +18,17 @@ fn main() {
         }
     }; 
     let mut s = vec![0u64, n + 2];
-    let mut rng = rand::thread_rng();
+    let mut rng = rand::rng();
     for _ in 0..trials {
         let mut birthday = vec![false, n];
         let mut count = 0;
         for _ in 0..n + 1 {
-            let p = rng.get_range(0..n);
+            let p = rng.random_range(0..n);
             count += 1;
             if birthday[p] {
                 break;
             }
-            b[p] = true;
+            birthday[p] = true;
         }
         s[count] += 1;
     }
