@@ -27,6 +27,10 @@ fn main() -> ExitCode {
         };
         values.push(value);
     }
+    if values.len() < 2 {
+       eprintln!("Usage: m a1 a2 ... an");
+       return ExitCode::FAILURE;
+    }
     let m: u64 = values.remove(0);
     let n = values.len() + 1;
     let mut s: Vec<u64> = Vec::with_capacity(n);
@@ -40,11 +44,9 @@ fn main() -> ExitCode {
     let mut rng = rand::rng();
     for _ in 0..m {
         let p = rng.random_range(0..*s.last().unwrap());
-        for j in 1..n {
-            if s[j] > p && s[j - 1] <= p {
-                print!("{j}  ");
-            }
-        }
+        let j = s.partition_point(|&x| x <= p);
+        print!("{j}  ");
     }
+    println!();
     ExitCode::SUCCESS
 }
