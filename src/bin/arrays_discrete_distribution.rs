@@ -32,18 +32,16 @@ fn main() -> ExitCode {
        return ExitCode::FAILURE;
     }
     let m: u64 = values.remove(0);
-    let n = values.len() + 1;
-    let mut s: Vec<u64> = Vec::with_capacity(n);
+    let mut s: Vec<u64> = Vec::with_capacity(values.len() + 1);
     s.push(0);
-    let mut current: u64 = 0;
+    let mut cumulative: u64 = 0;
     for value in values {
-        let next: u64 = current + value;
-        s.push(next);
-        current = next;
+        cumulative += value;
+        s.push(cumulative);
     }
     let mut rng = rand::rng();
     for _ in 0..m {
-        let p = rng.random_range(0..*s.last().unwrap());
+        let p = rng.random_range(0..cumulative);
         let j = s.partition_point(|&x| x <= p);
         print!("{j}  ");
     }
