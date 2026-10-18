@@ -8,7 +8,21 @@
 // ~/hello-rust> cargo build --release --bin arrays_thue_morse
  
 //  ~/hello-rust> ./target/release/arrays_thue_morse 15
-
+//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
+//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
+//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  + 
 
 // I applied this hint p(i) == p(j)  ⇔  p(i ^ j) == 0  ⇔  (i ^ j).count_ones() % 2 == 0
 // such that p(x) = x.count_ones() % 2 where p(x) is the value of Thue-Morse in the
