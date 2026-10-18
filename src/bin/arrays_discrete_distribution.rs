@@ -8,8 +8,8 @@
  
 //  ~/hello-rust> cargo build --release --bin arrays_discrete_distribution
  
-//  ~/hello-rust> ./target/release/arrays_discrete_distribution 30 10 10 10 20 40
-//  1  5  5  4  3  2  2  4  4  5  4  3  4  5  4  4  3  5  5  5  5  5  5  5  5  5  5  1  5  4  
+//  ~/hello-rust> ./target/release/arrays_discrete_distribution 50 10 10 12
+//  2  3  3  3  2  2  2  3  2  2  3  1  2  1  3  1  2  3  3  1  1  1  1  3  2  1  2  1  1  1  3  2  2  2  1  2  1  3  3  1  3  2  1  1  2  1  3  3  3  2  
  
 use rand::RngExt;
 use std::process::ExitCode;
