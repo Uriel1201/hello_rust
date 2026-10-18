@@ -9,29 +9,37 @@
  
 // ~/hello-rust> java -cp out ThueMorse 8
 
-public class ThueMorse {
-    
-    public static void main(String[] args) {
-        
-        int n = Integer.parseInt(args[0]);
-        if (n >= 0) {
-            int[] a = new int[n];
-            
-            for (int i = 1; i < n; i++) {
-                if (i % 2 == 0) a[i] = a[i / 2];
-                else a[i] = 1 - a[i - 1];
-            }
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (a[i] == a[j])
-                        System.out.print("+  ");
-                    else System.out.print("-  ");
+// I applied this hint p(i) == p(j)  ⇔  p(i ^ j) == 0  ⇔  (i ^ j).count_ones() % 2 == 0
+// such that p(x) = x.count_ones() % 2 where p(x) is the value of Thue-Morse in the
+// position x, starting the sequence in zero.
+
+use std::process::ExitCode;
+
+fn main() -> ExitCode {
+    let Some(text) = std::env::args().nth(1) else {
+        eprintln!("Error: missing argument m");
+        return ExitCode::FAILURE;
+    };
+
+    let n: usize = match text.parse() {
+        Ok(n) => n,
+        Err(_) => {
+            eprintln!("Error: was expected a non-negative Integer");
+            return ExitCode::FAILURE;
+        }
+    };
+    for i in 0..n {
+        for j in 0..n {
+            print!(
+                "{}  ",
+                if (i ^ j).count_ones() % 2 == 0 {
+                    "+"
+                } else {
+                    "-"
                 }
-                System.out.println();
-            }
+            );
         }
-        else {
-            System.out.println("n must be non-negative");
-        }
+        println!();
     }
+    return ExitCode::SUCCESS;
 }
