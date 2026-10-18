@@ -11,36 +11,6 @@
 //  ~/hello-rust> ./target/release/arrays_discrete_distribution 30 10 10 10 20 40
 //  1  5  5  4  3  2  2  4  4  5  4  3  4  5  4  4  3  5  5  5  5  5  5  5  5  5  5  1  5  4  
  
-
-public class DiscreteDistribution {
-   
-    public static void main(String[] args) {
-        
-        int n = args.length;
-        int m = Integer.parseInt(args[0]);
-        
-        int[] a = new int[n - 1];
-        for (int i = 0; i < n - 1; i++) {
-            a[i] = Integer.parseInt(args[i + 1]);
-        }
-        
-        int[] s = new int[n];
-        for (int i = 1; i < n; i++) {
-            s[i] = s[i - 1] + a[i - 1];
-        }
-        
-        for (int k = 0; k < m; k++) {
-            int p = (int) (Math.random() * s[n - 1]);
-           
-            for (int j = 1; j < n; j++) {
-                if (s[j] > p && s[j - 1] <= p)
-                    System.out.print(j + "  ");
-            }
-        }
-    }
-}
-
-
 use rand::RngExt;
 use std::process::ExitCode;
 
@@ -56,6 +26,25 @@ fn main() -> ExitCode {
             }
         };
         values.push(value);
+    }
+    let m: u64 = values.remove(0);
+    let n = values.len() + 1;
+    let mut s: Vec<u64> = Vec::with_capacity(n);
+    s.push(0);
+    let mut current: u64 = 0;
+    for value in values {
+        let next: u64 = current + value;
+        s.push(next);
+        current = next;
+    }
+    let mut rng = rand::rng();
+    for _ in 0..m {
+        let p = rng.random_range(0..*s.last().unwrap());
+        for j in 1..n {
+            if s[j] > p && s[j - 1] <= p {
+                print!("{j}  ");
+            }
+        }
     }
     ExitCode::SUCCESS
 }
