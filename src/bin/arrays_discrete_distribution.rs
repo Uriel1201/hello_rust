@@ -45,7 +45,7 @@ use std::process::ExitCode;
 
 fn main() -> ExitCode {
     let args: Vec<String> = std::env::args().skip(1).collect();
-    let Some(argsnext) = args.next() else {eprintln!("Error: Missing argument"), return ExitCode::FAILURE};
+    let Some(argsnext) = args.next() else {eprintln!("Error: Missing argument"); return ExitCode::FAILURE};
     let m: usize = match argsnext.parse() {
         Ok(m) => m,
         Err(_) => {
