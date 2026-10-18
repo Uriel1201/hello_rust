@@ -40,18 +40,22 @@ public class DiscreteDistribution {
     }
 }
 
+
 use rand::RngExt;
 use std::process::ExitCode;
 
 fn main() -> ExitCode {
-    let args: Vec<String> = std::env::args().skip(1).collect();
-    let Some(argsnext) = args.next() else {eprintln!("Error: Missing argument"); return ExitCode::FAILURE};
-    let m: usize = match argsnext.parse() {
-        Ok(m) => m,
-        Err(_) => {
-            eprintln!("Error: was expected an Integer");
-            return ExitCode::FAILURE;
-        }
-    };
+    let mut args = std::env::args().skip(1);
+    let mut values: Vec<u64> = Vec::new();
+    while let Some(nextarg) = args.next() {
+        let value: u64 = match nextarg.parse() {
+            Ok(v) => v,
+            Err(_) => {
+                eprintln!("Error: was expected an Integer");
+                return ExitCode::FAILURE;
+            }
+        };
+        values.push(value);
+    }
     ExitCode::SUCCESS
 }
