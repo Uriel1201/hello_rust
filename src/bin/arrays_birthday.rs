@@ -1,7 +1,7 @@
 // Name: Dante1201 (Carlos Uriel García)
 //  Id:   1201
 
-// Write a program Birthday.java that takes two integer command-line arguments n 
+// Write a program arrays_birthday.rs that takes two integer command-line arguments n 
 // and trials and performs the following experiment, trials times:
  
 // - Choose a birthday for the next person, uniformly at random between 0 and n−1.
