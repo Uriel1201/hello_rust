@@ -56,5 +56,5 @@ fn main() -> ExitCode {
         }
         println!();
     }
-    return ExitCode::SUCCESS;
+    ExitCode::SUCCESS
 }
