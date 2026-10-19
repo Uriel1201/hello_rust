@@ -8,8 +8,9 @@
 
 // ~/hello-rust> cargo build --release --bin random_walkers
 
-// ~/hello-rust> ./target/release/random_walkers 12 1000000
-
+// ~/hello-rust> ./target/release/random_walkers 15 1000000
+// Average Steps: 132.979164
+ 
 use rand::RngExt;
 use std::process::ExitCode;
 
