@@ -1,7 +1,7 @@
 // Name: Dante1201 (Carlos Uriel García)
 //  Id:   1201
 
-// Write a program arrays_birthday.rs that takes two integer command-line arguments n 
+// Write a program birthday.rs that takes two integer command-line arguments n 
 // and trials and performs the following experiment, trials times:
  
 // - Choose a birthday for the next person, uniformly at random between 0 and n−1.
@@ -13,9 +13,9 @@
 // exactly i people enter the room, and the fraction of times that i or fewer people enter the room) 
 // for each possible value of i from 1 until the fraction reaches (or exceeds) 50%.
  
-// ~/hello-rust> cargo build --release --bin arrays_birthday
+// ~/hello-rust> cargo build --release --bin birthday
  
-// ~/hello-rust> ./target/release/arrays_birthday 365 1000000
+// ~/hello-rust> ./target/release/birthday 365 1000000
 // 0  0  0
 // 1  0  0
 // 2  2782  0.002782
