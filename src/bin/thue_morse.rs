@@ -1,13 +1,13 @@
 // Name: Dante1201 (Carlos Uriel García)
 // Id:   1201
 
-// Write a program arrays_thue_morse.rs that takes 
+// Write a program thue_morse.rs that takes 
 // an integer command-line argument n and prints an n-by-n pattern. 
 // Include two space characters between each + and - character.
  
-// ~/hello-rust> cargo build --release --bin arrays_thue_morse
+// ~/hello-rust> cargo build --release --bin thue_morse
  
-//  ~/hello-rust> ./target/release/arrays_thue_morse 15
+//  ~/hello-rust> ./target/release/thue_morse 15
 //  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
 //  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
 //  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
