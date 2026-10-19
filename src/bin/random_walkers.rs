@@ -21,7 +21,7 @@ fn main() -> ExitCode {
         let value: u64 = match nextarg.parse() {
             Ok(v) => v,
             Err(e) => {
-                eprintln!("Error: invalid argument {e}");
+                eprintln!("Error: {e}");
                 return ExitCode::FAILURE;
             }
         };
