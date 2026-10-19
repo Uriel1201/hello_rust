@@ -11,3 +11,35 @@
 // ~/hello-rust> cargo build --release --bin bandmatrix
  
 // ~/hello-rust> ./target/release/bandmatrix 10 4
+
+use std::process::ExitCode;
+fn main() -> ExitCode {
+    let mut args = std::env::args().skip(1);
+    let mut params: Vec<usize> = Vec::with_capacity(2);
+    while let Some(nextarg) = args.next() {
+        let value: usize = match nextarg.parse() {
+            Ok(v) => v,
+            Err(e) => {
+                eprintln!("Error: invalid argument {e}");
+                return ExitCode::FAILURE;
+            }
+        };
+        params.push(value);
+    }
+    if params.len() != 2 {
+        eprintln!("Usage: n, width");
+        return ExitCode::FAILURE;
+    }
+    for i in 0..params[0] {
+        for j in 0..params[0] {
+            if i > j + params[1] || j > i + params[1] {
+                print!("0  ");
+            } else {
+                print!("*  ");
+            }
+        }
+        println!();
+    }
+    println!();
+    ExitCode::SUCCESS
+}
