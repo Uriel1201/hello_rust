@@ -12,6 +12,7 @@
 
 use rand::RngExt;
 use std::process::ExitCode;
+
 fn main() -> ExitCode {
     let mut args = std::env::args().skip(1);
     let mut params: Vec<u64> = Vec::with_capacity(2);
