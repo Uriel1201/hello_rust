@@ -1,14 +1,14 @@
 //  Name: Dante1201 (Carlos Uriel García)
 //  Id:   1201
  
-//  Write a program arrays_discrete_distribution.rs that takes an integer command-line 
+//  Write a program discrete_distribution.rs that takes an integer command-line 
 //  argument m, followed by a sequence of positive integer command-line arguments a1,a2,…,an
 //  and prints m random indices (separated by whitespace), choosing each index i
 //  with probability proportional to ai.
  
-//  ~/hello-rust> cargo build --release --bin arrays_discrete_distribution
+//  ~/hello-rust> cargo build --release --bin discrete_distribution
  
-//  ~/hello-rust> ./target/release/arrays_discrete_distribution 50 10 10 12
+//  ~/hello-rust> ./target/release/discrete_distribution 50 10 10 12
 //  2  3  3  3  2  2  2  3  2  2  3  1  2  1  3  1  2  3  3  1  1  1  1  3  2  1  2  1  1  1  3  2  2  2  1  2  1  3  3  1  3  2  1  1  2  1  3  3  3  2  
  
 use rand::RngExt;
