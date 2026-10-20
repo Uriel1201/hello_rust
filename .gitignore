@@ -25,3 +25,12 @@ env
 
 .ipynb_checkpoints/
 .colab/
+
+#=========================
+
+# IDEs
+
+#=========================
+
+.vscode/
+.idea/
