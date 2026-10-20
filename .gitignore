@@ -1,4 +1,33 @@
+=========================
+
+Rust / Cargo
+
+=========================
+
 /target
-/tokens
-.env
 *.rs.bk
+
+=========================
+
+Virtual Environments 
+
+=========================
+
+.env
+
+=========================
+
+Credentials and Secrets 
+
+=========================
+
+/tokens
+
+=========================
+
+Google Colab / Jupyter
+
+=========================
+
+.ipynb_checkpoints/
+.colab/
