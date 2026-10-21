@@ -8,7 +8,22 @@
  
 //  ~/hello-rust> cargo build --release --bin discrete_distribution
  
-//  ~/hello-rust> ./target/release/discrete_distribution 50 10 10 12
+//  ~/hello-rust> ./target/release/discrete_distribution 15 10 10 12
+// 2  
+// 2  
+// 1  
+// 2  
+// 1  
+// 3  
+// 2  
+// 2  
+// 2  
+// 3  
+// 3  
+// 3  
+// 2  
+// 2  
+// 3  
 
 use rand::RngExt;
 use std::process::ExitCode;
