@@ -42,7 +42,7 @@ fn main() -> ExitCode {
     for _ in 0..m {
         let p = rng.random_range(0..cumulative);
         let j = s.partition_point(|&x| x <= p);
-        print!("{j}  ");
+        println!("{j}  ");
     }
     println!();
     ExitCode::SUCCESS
