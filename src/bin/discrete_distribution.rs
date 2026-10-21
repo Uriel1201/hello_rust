@@ -1,14 +1,14 @@
-//  Name: Dante1201 (Carlos Uriel García)
-//  Id:   1201
+// Name: Dante1201 (Carlos Uriel García)
+// Id:   1201
  
-//  Write a program discrete_distribution.rs that takes an integer command-line 
-//  argument m, followed by a sequence of positive integer command-line arguments a1,a2,…,an
-//  and prints m random indices (separated by whitespace), choosing each index i
-//  with probability proportional to ai.
+// Write a program discrete_distribution.rs that takes an integer command-line 
+// argument m, followed by a sequence of positive integer command-line arguments a1,a2,…,an
+// and prints m random indices (separated by whitespace), choosing each index i
+// with probability proportional to ai.
  
-//  ~/hello-rust> cargo build --release --bin discrete_distribution
+// ~/hello-rust> cargo build --release --bin discrete_distribution
  
-//  ~/hello-rust> ./target/release/discrete_distribution 15 10 10 12
+// ~/hello-rust> ./target/release/discrete_distribution 15 10 10 12
 // 2  
 // 2  
 // 1  
