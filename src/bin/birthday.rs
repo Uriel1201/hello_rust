@@ -78,7 +78,7 @@ fn main() -> ExitCode {
     let mut f = 0.0;
     for (k, count) in s.into_iter().enumerate() {
         f += count as f64 / trials as f64;
-        println!("{}  {}  {}", k, count, f);
+        println!("{}, {}, {}", k, count, f);
         if f >= 0.5 {
             break;
         }
