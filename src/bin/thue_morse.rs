@@ -3,7 +3,9 @@
 
 // Write a program thue_morse.rs that takes 
 // an integer command-line argument n and prints an n-by-n pattern. 
-// Include two space characters between each + and - character.
+// and creates an n-by-n pattern by printing a + (plus sign) in row i
+// and column j if bits i and j in the sequence are equal, 
+// and a - (minus sign) if they are different.
  
 // ~/hello-rust> cargo build --release --bin thue_morse
  
