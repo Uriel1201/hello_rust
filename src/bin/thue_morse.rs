@@ -48,7 +48,7 @@ fn main() -> ExitCode {
     for i in 0..n {
         for j in 0..n {
             print!(
-                "{}  ",
+                "{} ",
                 if (i ^ j).count_ones() % 2 == 0 {
                     "+"
                 } else {
