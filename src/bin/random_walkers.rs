@@ -6,9 +6,9 @@
 // until the random walker is at Manhattan distance r from the starting point. 
 // Print the average number of steps.
 
-// ~/hello-rust> cargo build --release --bin random_walkers
+// ~/hello_rust> cargo build --release --bin random_walkers
 
-// ~/hello-rust> ./target/release/random_walkers 15 1000000
+// ~/hello_rust> ./target/release/random_walkers 15 1000000
 // Average Steps: 132.979164
  
 use rand::RngExt;
