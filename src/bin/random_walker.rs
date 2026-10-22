@@ -52,5 +52,6 @@ fn main() -> ExitCode {
         steps += 1;
     }
     writeln!(out, "steps = {}", steps).unwrap();
+    out.flush().unwrap();
     ExitCode::SUCCESS
 }
