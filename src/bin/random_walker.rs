@@ -31,9 +31,10 @@ fn main() -> ExitCode {
     let mut i: i64 = 0;
     let mut j: i64 = 0;
     let mut steps: u64 = 0;
+    let mut rng = rand::rng();
     println!("{} {}", i, j);
     while i.unsigned_abs() + j.unsigned_abs() < manhattan {
-        let x: f64 = rand::rng().random();
+        let x: f64 = rng.random();
         if x < 0.25 {
             i += 1;
         } else if x < 0.5 {
