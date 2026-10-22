@@ -14,6 +14,7 @@
 
 use rand::RngExt;
 use std::process::ExitCode;
+use std::io::{self, BufWriter, Write};
 
 fn main() -> ExitCode {
     let Some(text) = std::env::args().nth(1) else {
@@ -27,12 +28,15 @@ fn main() -> ExitCode {
             return ExitCode::FAILURE;
         }
     };
-
+ 
+    let stdout = io::stdout();
+    let mut out = BufWriter::new(stdout.lock());
+ 
     let mut i: i64 = 0;
     let mut j: i64 = 0;
     let mut steps: u64 = 0;
     let mut rng = rand::rng();
-    println!("{} {}", i, j);
+    writeln!(out, "{} {}", i, j).unwrap();
     while i.unsigned_abs() + j.unsigned_abs() < manhattan {
         let x: f64 = rng.random();
         if x < 0.25 {
@@ -44,9 +48,9 @@ fn main() -> ExitCode {
         } else {
             j -= 1;
         }
-        println!("{} {}", i, j);
+        writeln!(out, "{} {}", i, j).unwrap();
         steps += 1;
     }
-    println!("steps = {}", steps);
+    writeln!(out, "steps = {}", steps).unwrap();
     ExitCode::SUCCESS
 }
