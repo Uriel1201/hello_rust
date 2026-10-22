@@ -36,13 +36,12 @@ fn main() -> ExitCode {
         return ExitCode::FAILURE;
     }
     let mut sum: u64 = 0;
+    let mut rng = rand::rng();
     for _ in 0..trials {
         let mut i: i64 = 0;
         let mut j: i64 = 0;
-        let mut distance: u64 = 0;
         let mut steps: u64 = 0;
-        let mut rng = rand::rng();
-        while distance < manhattan {
+        while i.unsigned_abs() + j.unsigned_abs() < manhattan {
             let x: f64 = rng.random();
             if x < 0.25 {
                 i += 1;
@@ -53,7 +52,6 @@ fn main() -> ExitCode {
             } else {
                 j -= 1;
             }
-            distance = i.unsigned_abs() + j.unsigned_abs();
             steps += 1;
         }
         sum += steps;
