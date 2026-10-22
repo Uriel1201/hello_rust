@@ -8,9 +8,9 @@
 // Here, distance means the minimum number of cells you have to move 
 // (either left, right, up, or down) to reach the main diagonal.
 
-// ~/hello-rust> cargo build --release --bin bandmatrix
+// ~/hello_rust> cargo build --release --bin bandmatrix
  
-// ~/hello-rust> ./target/release/bandmatrix 15 4
+// ~/hello_rust> ./target/release/bandmatrix 15 4
 // *  *  *  *  *  0  0  0  0  0  0  0  0  0  0  
 // *  *  *  *  *  *  0  0  0  0  0  0  0  0  0  
 // *  *  *  *  *  *  *  0  0  0  0  0  0  0  0  
