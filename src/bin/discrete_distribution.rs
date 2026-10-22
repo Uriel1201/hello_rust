@@ -6,9 +6,9 @@
 // and prints m random indices (separated by whitespace), choosing each index i
 // with probability proportional to ai.
  
-// ~/hello-rust> cargo build --release --bin discrete_distribution
+// ~/hello_rust> cargo build --release --bin discrete_distribution
  
-// ~/hello-rust> ./target/release/discrete_distribution 15 10 10 12
+// ~/hello_rust> ./target/release/discrete_distribution 15 10 10 12
 // 2  
 // 2  
 // 1  
