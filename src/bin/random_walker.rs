@@ -8,9 +8,9 @@
 // treating the starting point as (0, 0). 
 // Also, print the total number of steps taken.
 
-// ~/hello-rust> cargo build --release --bin random_walker
+// ~/hello_rust> cargo build --release --bin random_walker
  
-// ~/hello-rust> ./target/release/random_walker 5
+// ~/hello_rust> ./target/release/random_walker 5
 // (0, 0)
 // (-1, 0)
 // (-1, -1)
