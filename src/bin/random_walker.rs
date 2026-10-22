@@ -30,10 +30,9 @@ fn main() -> ExitCode {
 
     let mut i: i64 = 0;
     let mut j: i64 = 0;
-    let mut distance: u64 = 0;
     let mut steps: u64 = 0;
     println!("{} {}", i, j);
-    while distance < manhattan {
+    while i.unsigned_abs() + j.unsigned_abs() < manhattan {
         let x: f64 = rand::rng().random();
         if x < 0.25 {
             i += 1;
@@ -45,7 +44,6 @@ fn main() -> ExitCode {
             j -= 1;
         }
         println!("{} {}", i, j);
-        distance = i.unsigned_abs() + j.unsigned_abs();
         steps += 1;
     }
     println!("steps = {}", steps);
