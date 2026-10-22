@@ -11,27 +11,6 @@
 // ~/hello_rust> cargo build --release --bin random_walker
  
 // ~/hello_rust> ./target/release/random_walker 5
-// (0, 0)
-// (-1, 0)
-// (-1, -1)
-// (0, -1)
-// (0, -2)
-// (-1, -2)
-// (0, -2)
-// (0, -3)
-// (0, -4)
-// (0, -3)
-// (1, -3)
-// (0, -3)
-// (0, -2)
-// (1, -2)
-// (0, -2)
-// (0, -1)
-// (1, -1)
-// (2, -1)
-// (2, -2)
-// (3, -2)
-// steps = 19
 
 use rand::RngExt;
 use std::process::ExitCode;
@@ -53,7 +32,7 @@ fn main() -> ExitCode {
     let mut j: i64 = 0;
     let mut distance: u64 = 0;
     let mut steps: u64 = 0;
-    println!("({}, {})", i, j);
+    println!("{} {}", i, j);
     while distance < manhattan {
         let x: f64 = rand::rng().random();
         if x < 0.25 {
@@ -65,7 +44,7 @@ fn main() -> ExitCode {
         } else {
             j -= 1;
         }
-        println!("({}, {})", i, j);
+        println!("{} {}", i, j);
         distance = i.unsigned_abs() + j.unsigned_abs();
         steps += 1;
     }
