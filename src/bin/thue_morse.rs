@@ -6,29 +6,13 @@
 // and creates an n-by-n pattern by printing a + (plus sign) in row i
 // and column j if bits i and j in the sequence are equal, 
 // and a - (minus sign) if they are different.
- 
-// ~/hello-rust> cargo build --release --bin thue_morse
- 
-//  ~/hello-rust> ./target/release/thue_morse 15
-//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
-//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
-//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
-//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
-//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
-//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
-//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
-//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
-//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
-//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
-//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
-//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
-//  +  -  -  +  -  +  +  -  -  +  +  -  +  -  -  
-//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  +  
-//  -  +  +  -  +  -  -  +  +  -  -  +  -  +  + 
-
 // I applied this hint p(i) == p(j)  ⇔  p(i ^ j) == 0  ⇔  (i ^ j).count_ones() % 2 == 0
 // such that p(x) = x.count_ones() % 2 where p(x) is the value of Thue-Morse in the
 // position x, starting the sequence in zero.
+ 
+// ~/hello_rust> cargo build --release --bin thue_morse
+ 
+//  ~/hello_rust> ./target/release/thue_morse 15
 
 use std::process::ExitCode;
 
