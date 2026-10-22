@@ -12,8 +12,18 @@
  
 // ~/hello_rust> cargo build --release --bin thue_morse
  
-//  ~/hello_rust> ./target/release/thue_morse 15
-
+// ~/hello_rust> ./target/release/thue_morse 10
+// + - - + - + + - - + 
+// - + + - + - - + + - 
+// - + + - + - - + + - 
+// + - - + - + + - - + 
+// - + + - + - - + + - 
+// + - - + - + + - - + 
+// + - - + - + + - - + 
+// - + + - + - - + + - 
+// - + + - + - - + + - 
+// + - - + - + + - - + 
+ 
 use std::process::ExitCode;
 
 fn main() -> ExitCode {
