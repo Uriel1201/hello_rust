@@ -13,9 +13,9 @@
 // exactly i people enter the room, and the fraction of times that i or fewer people enter the room)
 // for each possible value of i from 1 until the fraction reaches (or exceeds) 50%.
 
-// ~/hello_rust> cargo build --release --bin birthday
+// ~/hello_rust $ cargo build --release --bin birthday
 
-// ~/hello_rust> ./target/release/birthday 365 1000000
+// ~/hello_rust $ ./target/release/birthday 365 1000000
 
 use rand::RngExt;
 use arrow_array::{ArrayRef, Float64Array, RecordBatch, UInt32Array};
