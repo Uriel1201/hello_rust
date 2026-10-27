@@ -69,7 +69,7 @@ fn main() -> Result<(), Box<dyn Error>> {
     let mut rng       = rand::rng();
     let sample        = discrete_distribution(m, &cum_weights, &mut rng)?;
     let col: Vec<u64> = sample.into_iter().map(|s| s as u64).collect();
-    let schema = Arc::new(Schema::new(vec![
+    let schema        = Arc::new(Schema::new(vec![
         Field::new("INDEX_SAMPLE", DataType::UInt64,  false),
     ]));
     let columns: Vec<ArrayRef> = vec![Arc::new(UInt64Array::from(col))];
