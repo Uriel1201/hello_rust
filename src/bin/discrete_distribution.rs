@@ -3,9 +3,7 @@
 
 // Write a program discrete_distribution.rs that takes an integer command-line
 // argument m, followed by a sequence of positive integer command-line arguments a1,a2,…,an
-// and prints m random indices, choosing each index i
-// with probability proportional to ai.
-
+// and prints m random indices, choosing each index i with probability proportional to ai.
 // ~/hello_rust $ cargo build --release --bin discrete_distribution
 
 // ~/hello_rust $ ./target/release/discrete_distribution 5000000 15 10 10 12
