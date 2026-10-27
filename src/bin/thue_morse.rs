@@ -10,9 +10,9 @@
 // such that p(x) = x.count_ones() % 2 where p(x) is the value of Thue-Morse in the
 // position x, starting the sequence in zero.
  
-// ~/hello_rust> cargo build --release --bin thue_morse
+// ~/hello_rust $ cargo build --release --bin thue_morse
  
-// ~/hello_rust> ./target/release/thue_morse 10
+// ~/hello_rust $ ./target/release/thue_morse 10
 // + - - + - + + - - + 
 // - + + - + - - + + - 
 // - + + - + - - + + - 
