@@ -57,33 +57,26 @@ fn birthday_simulation(n: usize, trials: usize) -> Vec<u32> {
 }
 
 fn main() -> Result<(), Box<dyn Error>> {
-    let (n, trials) = arg_parse()?;
-    let simulation  = birthday_simulation(n, trials);
-    let mut kvec    = Vec::new();
-    let mut svec    = Vec::new();
-    let mut pvec    = Vec::new();
-    let mut f       = 0.0;
-    let t           = trials as f64;
-    for (k, value) in simulation.into_iter().enumerate() {
-        f += value as f64 / t;
-        kvec.push(k as u32);
-        svec.push(value);
-        pvec.push(f);
-        if f >= 0.5 {
-            break;
-        }
-    }
+    let (n, trials)            = arg_parse()?;
+    let mut f                  = 0.0;
+    let t                      = trials as f64;
+    let simulation             = birthday_simulation(n, trials);
+    let kvec: Vec<u32>         = (0..simulation.len() as u32).collect();
+    let pvec: Vec<f64>         = simulation
+        .iter()
+        .map(|&v| { f += v as f64 / t; f })
+        .collect();
     let schema = Arc::new(Schema::new(vec![
-        Field::new("k",         DataType::UInt32,  false),
-        Field::new("frequency", DataType::UInt32,  false),
-        Field::new("p_k",       DataType::Float64, false),
+        Field::new("COUNTS",        DataType::UInt32,  false),
+        Field::new("FREQUENCIES",   DataType::UInt32,  false),
+        Field::new("CUM_FRACTIONS", DataType::Float64, false),
     ]));
     let columns: Vec<ArrayRef> = vec![Arc::new(UInt32Array::from(kvec)),
-        Arc::new(UInt32Array::from(svec)),
+        Arc::new(UInt32Array::from(simulation)),
         Arc::new(Float64Array::from(pvec))
     ];
-    let batch = RecordBatch::try_new(schema.clone(), columns)?;
-    let mut w = StreamWriter::try_new(std::io::stdout().lock(), &schema)?;
+    let batch                   = RecordBatch::try_new(schema.clone(), columns)?;
+    let mut w                   = StreamWriter::try_new(std::io::stdout().lock(), &schema)?;
     w.write(&batch)?;
     w.finish()?;
     Ok(())
